@@ -1,0 +1,48 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Trips Sorter API",
+        "version": "1.0.0"
+    },
+    "basePath": "/api",
+    "paths": {
+        "/sort_api/{id}/{format}": {
+            "get": {
+                "summary": "Get your Trip Sorted w.r.t Boarding Cards",
+                "operationId": "Get Sorted trip Against your tripID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Target TripID",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "format",
+                        "in": "path",
+                        "description": "Format for which list to be sorted",
+                        "required": false,
+                        "type": "string",
+                        "enum": [
+                            "cli",
+                            "web"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
